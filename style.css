@@ -1,0 +1,530 @@
+```css
+/* ================================
+   ACM CST - Main Stylesheet
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f5;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* ================================
+   Navigation
+   ================================ */
+
+.navbar {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f7f7f5;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #e00000;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar nav a {
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #e00000;
+}
+
+/* ================================
+   Hero
+   ================================ */
+
+.hero {
+    min-height: 88vh;
+    padding: 80px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    background: #f7f7f5;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.eyebrow {
+    color: #e00000;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 125px);
+    line-height: 0.9;
+    letter-spacing: -6px;
+    margin-bottom: 35px;
+}
+
+.hero h1 span,
+.section-heading span,
+.cta span,
+.contact span {
+    color: #e00000;
+}
+
+.hero-text {
+    max-width: 560px;
+    font-size: 19px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+/* Buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background: #e00000;
+    color: white;
+}
+
+.btn.primary:hover {
+    background: #b50000;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    border: 1px solid #111;
+    color: #111;
+}
+
+.btn.secondary:hover {
+    background: #111;
+    color: white;
+}
+
+/* Hero Card */
+
+.hero-card {
+    width: 330px;
+    min-height: 330px;
+    padding: 40px;
+    background: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.card-symbol {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #e00000;
+    font-size: 55px;
+    font-weight: 900;
+}
+
+.hero-card h3 {
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-card p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* ================================
+   General Sections
+   ================================ */
+
+.section {
+    padding: 110px 7%;
+}
+
+.section-heading {
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+/* ================================
+   About
+   ================================ */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-grid > div:first-child p {
+    font-size: 22px;
+    max-width: 650px;
+    color: #444;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #bbb;
+}
+
+.stat {
+    padding: 25px 15px;
+    border-right: 1px solid #bbb;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+    display: block;
+    font-size: 40px;
+    color: #e00000;
+    margin-bottom: 10px;
+}
+
+.stat span {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ================================
+   Dark Section / Events
+   ================================ */
+
+.dark-section {
+    background: #111;
+    color: white;
+}
+
+.dark-section .section-heading h2 {
+    color: white;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    border: 1px solid #444;
+    padding: 35px;
+    display: flex;
+    gap: 25px;
+    min-height: 250px;
+    transition: 0.3s;
+}
+
+.event-card:hover {
+    border-color: #e00000;
+    transform: translateY(-5px);
+}
+
+.event-number {
+    color: #e00000;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.event-date {
+    color: #e00000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.event-card p:last-child {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ================================
+   Activities
+   ================================ */
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid #ccc;
+}
+
+.activity {
+    padding: 40px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.activity:nth-child(even) {
+    border-right: none;
+}
+
+.activity:hover {
+    background: #111;
+    color: white;
+}
+
+.activity span {
+    color: #e00000;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.activity h3 {
+    font-size: 30px;
+    margin: 20px 0 10px;
+}
+
+.activity p {
+    color: #666;
+    max-width: 500px;
+}
+
+.activity:hover p {
+    color: #bbb;
+}
+
+/* ================================
+   Call To Action
+   ================================ */
+
+.cta {
+    padding: 120px 7%;
+    background: #e00000;
+    color: white;
+}
+
+.cta .eyebrow {
+    color: white;
+}
+
+.cta h2 {
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+    margin-bottom: 40px;
+}
+
+.cta span {
+    color: #111;
+}
+
+.cta .btn.primary {
+    background: white;
+    color: #111;
+}
+
+.cta .btn.primary:hover {
+    background: #111;
+    color: white;
+}
+
+/* ================================
+   Contact
+   ================================ */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    border-top: 1px solid #bbb;
+    padding-top: 20px;
+}
+
+.contact-info strong {
+    display: block;
+    color: #e00000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+/* ================================
+   Footer
+   ================================ */
+
+footer {
+    padding: 30px 7%;
+    background: #111;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 11px;
+    }
+
+    .hero,
+    .section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero {
+        padding-top: 60px;
+        min-height: auto;
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: -4px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+        border-bottom: 1px solid #bbb;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity {
+        border-right: none;
+    }
+
+    .cta {
+        padding: 80px 5%;
+    }
+
+    .cta h2 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .contact h2 {
+        font-size: 45px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
