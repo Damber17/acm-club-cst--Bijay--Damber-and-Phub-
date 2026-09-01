@@ -1,0 +1,880 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ACM CST | About</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b12;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+            padding: 20px 7%;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: #080b12;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8ea2ff;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #aab2c0;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #ffffff;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 60vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 90px 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(73,94,220,0.18),
+                    transparent 55%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #8ea2ff;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #8ea2ff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #9ba4b4;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 7%;
+        }
+
+        .section-heading {
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+        }
+
+        .section-heading h2 span {
+            color: #8ea2ff;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: #929baa;
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        .about-card {
+            padding: 35px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+
+            background: rgba(255,255,255,0.025);
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: #929baa;
+        }
+
+        /* =========================
+           MISSION / VISION
+        ========================= */
+
+        .dark-section {
+            max-width: none;
+            background: #0d121d;
+        }
+
+        .dark-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .mission-card {
+            padding: 40px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+
+            background: rgba(255,255,255,0.025);
+        }
+
+        .mission-number {
+            color: #65708a;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+        }
+
+        .mission-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+
+        .mission-card p {
+            color: #8d96a6;
+        }
+
+        /* =========================
+           VALUES
+        ========================= */
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .value {
+            padding: 30px;
+
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .value span {
+            display: block;
+            color: #8ea2ff;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .value h3 {
+            margin-bottom: 10px;
+        }
+
+        .value p {
+            color: #8992a2;
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           ACM CST
+        ========================= */
+
+        .chapter {
+            max-width: none;
+            background: #0d121d;
+        }
+
+        .chapter-inner {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .chapter h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .chapter h2 span {
+            color: #8ea2ff;
+        }
+
+        .chapter p {
+            color: #929baa;
+            line-height: 1.9;
+        }
+
+        .chapter-info {
+            padding: 35px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+        }
+
+        .info-row {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info-row span {
+            color: #8992a2;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 120px 7%;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(73,94,220,0.15),
+                    transparent 55%
+                );
+        }
+
+        .cta h2 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            margin: 15px 0 25px;
+        }
+
+        .cta h2 span {
+            color: #8ea2ff;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: auto;
+            color: #929baa;
+        }
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 25px;
+
+            border-radius: 7px;
+
+            background: #ffffff;
+
+            color: #080b12;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px 7%;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #697283;
+
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-grid,
+            .mission-grid,
+            .chapter-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 70px 6%;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <span>ACM</span> CST
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html" class="active">
+                    About
+                </a>
+
+                <a href="index.html#events">
+                    Events
+                </a>
+
+                <a href="index.html#activities">
+                    Activities
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+                <a href="membership.html">
+                    Membership
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                ABOUT ACM CST
+            </p>
+
+            <h1>
+                About <span>ACM CST</span>
+            </h1>
+
+            <p>
+                A student community dedicated to technology,
+                innovation, learning and collaboration at the
+                College of Science and Technology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- About ACM CST -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                WHO WE ARE
+            </p>
+
+            <h2>
+                More than a club.
+                <span>A community.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    ACM CST is a student community at the
+                    College of Science and Technology,
+                    Royal University of Bhutan.
+                </p>
+
+                <p>
+                    The chapter brings together students
+                    who are interested in computing,
+                    technology and innovation.
+                </p>
+
+                <p>
+                    Through workshops, competitions,
+                    projects, meetups and collaborative
+                    activities, ACM CST provides students
+                    with opportunities to develop practical
+                    skills and explore new technologies.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    Our Community
+                </h3>
+
+                <p>
+                    We believe that students learn best
+                    when they work together. ACM CST
+                    encourages students to share knowledge,
+                    experiment with ideas and support one
+                    another while developing their technical
+                    and professional skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Mission and Vision -->
+
+    <section class="section dark-section">
+
+        <div class="dark-inner">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    OUR PURPOSE
+                </p>
+
+                <h2>
+                    Mission & <span>Vision</span>
+                </h2>
+
+            </div>
+
+
+            <div class="mission-grid">
+
+                <div class="mission-card">
+
+                    <div class="mission-number">
+                        01 / MISSION
+                    </div>
+
+                    <h3>
+                        Empower Students
+                    </h3>
+
+                    <p>
+                        To provide students with opportunities
+                        to develop technical knowledge,
+                        problem-solving abilities, teamwork
+                        and leadership through computing
+                        activities and collaborative learning.
+                    </p>
+
+                </div>
+
+
+                <div class="mission-card">
+
+                    <div class="mission-number">
+                        02 / VISION
+                    </div>
+
+                    <h3>
+                        Inspire Innovation
+                    </h3>
+
+                    <p>
+                        To build an active technology community
+                        where students are encouraged to explore
+                        ideas, create meaningful solutions and
+                        contribute to the future of computing.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Values -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                WHAT WE VALUE
+            </p>
+
+            <h2>
+                Learn. Create. <span>Connect.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="values-grid">
+
+            <div class="value">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Learning
+                </h3>
+
+                <p>
+                    We encourage continuous learning
+                    and curiosity in technology.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Innovation
+                </h3>
+
+                <p>
+                    We encourage students to experiment,
+                    create and solve problems.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Collaboration
+                </h3>
+
+                <p>
+                    We believe great ideas grow through
+                    teamwork and knowledge sharing.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <span>
+                    04
+                </span>
+
+                <h3>
+                    Community
+                </h3>
+
+                <p>
+                    We create an inclusive environment
+                    where students can connect and grow.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Chapter -->
+
+    <section class="section chapter">
+
+        <div class="chapter-inner">
+
+            <div>
+
+                <p class="eyebrow">
+                    OUR CHAPTER
+                </p>
+
+                <h2>
+                    ACM <span>CST</span>
+                </h2>
+
+                <p>
+                    The ACM CST Student Chapter is based at
+                    the College of Science and Technology,
+                    Royal University of Bhutan.
+                </p>
+
+            </div>
+
+
+            <div class="chapter-info">
+
+                <div class="info-row">
+
+                    <strong>
+                        Institution
+                    </strong>
+
+                    <span>
+                        College of Science and Technology
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <strong>
+                        University
+                    </strong>
+
+                    <span>
+                        Royal University of Bhutan
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <strong>
+                        Location
+                    </strong>
+
+                    <span>
+                        CST, Phuentsholing, Bhutan
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <strong>
+                        Focus
+                    </strong>
+
+                    <span>
+                        Computing, Technology & Innovation
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <p class="eyebrow">
+            JOIN THE COMMUNITY
+        </p>
+
+        <h2>
+            Ready to <span>get involved?</span>
+        </h2>
+
+        <p>
+            Become part of ACM CST and take part in
+            workshops, projects, competitions and
+            community activities.
+        </p>
+
+        <a
+            href="membership.html"
+            class="btn"
+        >
+            Become a Member →
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ACM CST. All rights reserved.
+        </p>
+
+        <p>
+            Built by ACM CST Students.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```
+
